@@ -257,20 +257,42 @@
 .editor-main {
   display: grid;
   gap: 1rem;
+  border-radius: 30px;
+  background:
+    linear-gradient(180deg, rgba(18, 26, 48, 0.86), rgba(7, 12, 24, 0.82)),
+    radial-gradient(circle at top left, rgba(141, 216, 255, 0.16), transparent 42%);
+}
+
+.editor-panel-header {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.editor-panel-copy {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
 }
 
 .editor-textarea {
   width: 100%;
-  min-height: 18rem;
+  min-height: 22rem;
   resize: vertical;
-  border-radius: 24px;
-  border: 1px solid var(--border);
-  background: rgba(4, 8, 18, 0.78);
+  border-radius: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    linear-gradient(180deg, rgba(7, 11, 20, 0.94), rgba(12, 17, 30, 0.9));
   color: var(--text-strong);
-  padding: 1rem 1.1rem;
+  padding: 1.1rem 1.2rem;
   line-height: 1.7;
   outline: none;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 0 0 1px rgba(255, 255, 255, 0.02);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 .editor-textarea::placeholder {
@@ -278,8 +300,10 @@
 }
 
 .editor-textarea:focus {
-  border-color: rgba(141, 216, 255, 0.36);
-  box-shadow: 0 0 0 4px rgba(141, 216, 255, 0.08);
+  border-color: rgba(141, 216, 255, 0.46);
+  box-shadow:
+    0 0 0 4px rgba(141, 216, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .tool-stack {
@@ -341,10 +365,15 @@
 }
 
 .history-panel {
+  margin-top: 0.5rem;
   display: grid;
   gap: 1rem;
   position: sticky;
   top: 6rem;
+  border-radius: 30px;
+  background:
+    linear-gradient(180deg, rgba(17, 25, 44, 0.88), rgba(6, 10, 21, 0.84)),
+    radial-gradient(circle at top right, rgba(195, 166, 255, 0.14), transparent 40%);
 }
 
 .history-list {
@@ -357,6 +386,26 @@
 
 .history-item {
   padding: 0.9rem 1rem;
+}
+
+.correction-item {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.correction-label {
+  width: fit-content;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-strong);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+.correction-item p {
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 .history-meta {
