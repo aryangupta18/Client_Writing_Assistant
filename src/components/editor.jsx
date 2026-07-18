@@ -15,7 +15,7 @@ const Editor = () => {
 
   const handleSpellCheck = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/api/spell-check", {
+      const response = await axios.post("https://server-writing-assistant.onrender.com/api/spell-check", {
         text,
       });
       setSpellCheckedText(response.data.response || "");
@@ -25,7 +25,7 @@ const Editor = () => {
   };
   const handleGrammarCheck = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/api/grammar-check", {
+      const response = await axios.post("https://server-writing-assistant.onrender.com/api/grammar-check", {
         text,
       });
       setGrammarCheckedText(response.data.response || "");
@@ -35,7 +35,7 @@ const Editor = () => {
   };
   const handleRephrase = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/api/analyze", {
+      const response = await axios.post("https://server-writing-assistant.onrender.com/api/analyze", {
         text,
       });
       setRephrasedText(response.data.response || "");
